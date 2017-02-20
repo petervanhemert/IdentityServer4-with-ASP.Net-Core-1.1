@@ -4,7 +4,7 @@
 - [Debugging in IIS Project(Kestrel)](#debugging-in-project)
 
 ##Setup IdentityServer
- [*Based on the repository.*](https://github.com/petervanhemert/ASP.NET-CORE-1.1-Development-with-SSL/)
+ [*Based on the repository.*](https://github.com/petervanhemert/ASP.NET-CORE-1.1-Development-with-SSL/blob/master/README.md)
 ## Debugging in IIS Express
 
 
