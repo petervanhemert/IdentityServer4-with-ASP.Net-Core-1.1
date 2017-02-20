@@ -8,10 +8,10 @@
  
  Project Directory.
  
- In Data/Migrations Add Folders,
- - Configuration
- - Identity
- - PersistedGrants
+ - In Data/Migrations Add Folders
+  - Configuration
+  - Identity
+  - PersistedGrants
  
  Put files of ApplicationDbContext Migration to Identity.
  ```
