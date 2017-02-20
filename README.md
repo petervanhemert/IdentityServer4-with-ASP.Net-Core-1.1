@@ -5,6 +5,33 @@
 
 ##Setup IdentityServer
  [*Based on this repository.*](https://github.com/petervanhemert/ASP.NET-CORE-1.1-Development-with-SSL/blob/master/README.md)
+ 
+ Nuget Package Manager
+ 
+ Update Packages
+ 
+ Add to project:
+ ```
+ IdentityServer4
+ IdentityServer4.AspNetIdentity
+ IdentityServer4.EntityFramework
+ ```
+ Change DefaultConnection in ConnectionStrings in the file appsettings.json
+  ```
+ {
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=<Server name>;Database=<Database name>;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  }
+}
+  ```
+  
+  
 ## Debugging in IIS Express
 
 
