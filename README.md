@@ -6,6 +6,19 @@
 ##Setup IdentityServer
  [*Based on this repository.*](https://github.com/petervanhemert/ASP.NET-CORE-1.1-Development-with-SSL/blob/master/README.md)
  
+ Project Directory.
+ 
+ In Data/Migrations Add Folders,
+ - Configuration
+ - Identity
+ - PersistedGrants
+ 
+ Put files of ApplicationDbContext Migration to Identity.
+ ```
+ ApplicationDbContextModelSnapshot.cs
+ 00000000000000_CreateIdentitySchema.cs
+ ```
+ 
  Nuget Package Manager
  
  Update Packages
