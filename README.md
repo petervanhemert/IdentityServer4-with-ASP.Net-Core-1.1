@@ -2,4 +2,6 @@
 
 ```
 PM> Add-Migration -Context ApplicationDbContext -OutputDir <ProjectName>\Data\Migrations\<DestinationFolder> SetMigrationName
+
+PM> Update-Database -Context ApplicationDbContext
 ```
