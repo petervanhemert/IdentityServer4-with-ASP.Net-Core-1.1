@@ -82,11 +82,10 @@ public class Startup
                 .AddProfileService<IdentityWithAdditionalClaimsProfileService>();
         }
 
+
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            // this will do the initial DB population
-            InitializeDbTestData(app);
-
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
