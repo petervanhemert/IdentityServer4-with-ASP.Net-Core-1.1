@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using IdentityServer4_VisualStudio2017.Data;
 using IdentityServer4_VisualStudio2017.Models;
 using IdentityServer4_VisualStudio2017.Services;
+using System.Reflection;
 
 namespace IdentityServer4_VisualStudio2017
 {
@@ -39,6 +40,8 @@ namespace IdentityServer4_VisualStudio2017
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+
             // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -52,6 +55,16 @@ namespace IdentityServer4_VisualStudio2017
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            // add for identityserver
+            services.AddIdentityServer()
+                .AddTemporarySigningCredential()
+                .AddOperationalStore(
+                    builder => builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), options => options.MigrationsAssembly(migrationsAssembly)))
+                .AddConfigurationStore(
+                    builder => builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), options => options.MigrationsAssembly(migrationsAssembly)))
+                .AddAspNetIdentity<ApplicationUser>();
+                //.AddProfileService<IdentityWithAdditionalClaimsProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,6 +90,8 @@ namespace IdentityServer4_VisualStudio2017
             app.UseStaticFiles();
 
             app.UseIdentity();
+
+            app.UseIdentityServer();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
