@@ -1,12 +1,14 @@
 # IdentityServer4-with-ASP.Net-Core-1.1
 
 - [Setup IdentityServer](#setup-identityserver)
+ - [Setup IdentityServer](#setup-identityserver)
 - [Using EntityFramework Core for configuration data](#using-entityframework-core-for-configuration-data)
 
 ##Setup IdentityServer
  [*Based on this repository.*](https://github.com/petervanhemert/ASP.NET-CORE-1.1-Development-with-SSL/blob/master/README.md)
  
- ###Project Directory.
+ ###Project Directory
+###Nuget Package Manager
  
  - In Data/Migrations Add Folders
   - Configuration
