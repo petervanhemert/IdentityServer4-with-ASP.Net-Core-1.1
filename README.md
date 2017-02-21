@@ -17,7 +17,7 @@
   - [x] Identity
   - [x] PersistedGrants
  
- Put files of ApplicationDbContext Migration to Identity.
+ Move the files of ApplicationDbContext Migration to Identity.
  ```
  ApplicationDbContextModelSnapshot.cs
  00000000000000_CreateIdentitySchema.cs
