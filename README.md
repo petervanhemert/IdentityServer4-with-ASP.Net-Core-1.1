@@ -14,8 +14,8 @@
  
  - In Data/Migrations Add Folders
   - [x] Configuration
-  - Identity
-  - PersistedGrants
+  - [x] Identity
+  - [x] PersistedGrants
  
  Put files of ApplicationDbContext Migration to Identity.
  ```
