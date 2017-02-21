@@ -6,6 +6,9 @@
  - [Connectionstring to DB](#connectionstring-to-db)
  - [Startup](#startup)
 - [Using EntityFramework Core for configuration data](#using-entityframework-core-for-configuration-data)
+ - [Configuring the stores](#configuring-the-stores)
+ - [ConfigurationStore](#configurationstore)
+ - [OperationalStore](#operationalstore)
 
 ##Setup IdentityServer
  [*Based on this repository.*](https://github.com/petervanhemert/ASP.NET-CORE-1.1-Development-with-SSL/blob/master/README.md)
@@ -180,6 +183,13 @@ public class Startup
   
 ## Using EntityFramework Core for configuration data
 
+ ###Configuring the stores
+ 
+ 
+ ###ConfigurationStore
+ 
+ 
+ ###OperationalStore
 
 
 ```
