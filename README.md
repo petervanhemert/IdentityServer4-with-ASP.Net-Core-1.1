@@ -183,13 +183,13 @@ public class Startup
   
 ## Using EntityFramework Core for configuration data
 
- ###Configuring the stores
+ ### Configuring the stores
  
  
- ###ConfigurationStore
+ ### ConfigurationStore
  
  
- ###OperationalStore
+ ### OperationalStore
 
 
 ```
@@ -208,22 +208,3 @@ PM> Update-Database -Context ApplicationDbContext
 
 
 
-
-
-
-diff --git a/README.md b/README.md
-index 88fcf69..8614873 100644
---- a/README.md
-+++ b/README.md
-@@ -28,6 +28,7 @@ All the hidden and not hidden features of Git and GitHub. This cheat sheet was i
- - [Merged Branches](#merged-branches)
- - [Quick Licensing](#quick-licensing)
- - [TODO Lists](#todo-lists)
-+- [Relative Links](#relative-links)
- - [.gitconfig Recommendations](#gitconfig-recommendations)
-     - [Aliases](#aliases)
-     - [Auto-correct](#auto-correct)
-@@ -381,6 +382,19 @@ When they are clicked, they will be updated in the pure Markdown:
- - [ ] Sleep
-
-(...)
