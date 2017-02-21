@@ -34,6 +34,7 @@
  ```
  
 ###Connectionstring to DB
+
  Open appsettings.json
  
  Change DefaultConnection in ConnectionStrings in the file appsettings.json
