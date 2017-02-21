@@ -195,17 +195,25 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 #####Adding migrations
 
 ```ruby
-PM> Add-Migration -Context ApplicationDbContext -OutputDir <ProjectName>\Data\Migrations\<DestinationFolder> SetMigrationName
+PM> Add-Migration SetMigrationName -c ApplicationDbContext -o Data/Migrations/Identity
 
-PM> Update-Database -Context ApplicationDbContext
+PM> Add-Migration SetMigrationName -c PersistedGrantDbContext -o Data/Migrations/PersistedGrants
+
+PM> Add-Migration SetMigrationName -c ConfigurationDbContext -o Data/Migrations/Configuration
+
+PM> Update-Database -c ApplicationDbContext
+
+PM> Update-Database -c PersistedGrantDbContext
+
+PM> Update-Database -c ConfigurationDbContext
 ```
 
 #####Add-Migration
 
-`-Context ApplicationDbContext`
+`-c ApplicationDbContext`
 Is the DbContext we are targeting
 
-`-OutputDir <ProjectName>\Data\Migrations\<DestinationFolder>`
+`-o <ProjectName>\Data\Migrations\<DestinationFolder>`
 Is the file destination
 
 `SetMigrationName`
@@ -213,7 +221,7 @@ Is the name we give of the Migration
 
 #####Update-Database
 
-`-Context ApplicationDbContext`
+`-c ApplicationDbContext`
 Is the DbContext we are targeting
 
 ### Configuring the stores
