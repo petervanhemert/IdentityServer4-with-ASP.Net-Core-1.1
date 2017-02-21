@@ -63,6 +63,8 @@
 
 As before, IdentityServer needs to be configured in both ConfigureServices and in Configure in Startup.cs.
 
+#####ConfigureServices
+
 Modify your ConfigureServices in the Startup.cs to look like this:
 ```ruby
         public void ConfigureServices(IServiceCollection services)
@@ -96,7 +98,7 @@ Modify your ConfigureServices in the Startup.cs to look like this:
         }
 ```
 
-####Configure
+#####Configure
 
 This shows both the template code generated for ASP.NET Identity, plus the additions needed for IdentityServer (just after UseIdentity). It’s important when using ASP.NET Identity that IdentityServer be registered after ASP.NET Identity in the pipeline because IdentityServer is relying upon the authentication cookie that ASP.NET Identity creates and manages.
 
