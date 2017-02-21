@@ -102,6 +102,7 @@ Modify your ConfigureServices in the Startup.cs to look like this:
 
 This shows both the template code generated for ASP.NET Identity, plus the additions needed for IdentityServer (just after UseIdentity). It’s important when using ASP.NET Identity that IdentityServer be registered after ASP.NET Identity in the pipeline because IdentityServer is relying upon the authentication cookie that ASP.NET Identity creates and manages.
 
+Modify your Configure in the Startup.cs to look like this:
 ```ruby
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -126,60 +127,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
             
             app.UseIdentityServer();
 
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
-                AuthenticationScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
-                AutomaticAuthenticate = false,
-                AutomaticChallenge = false
-            });
-
-            // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
-            app.UseGoogleAuthentication(new GoogleOptions
-            {
-                AuthenticationScheme = "Google",
-                DisplayName = "Google",
-                SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
-                ClientId = Configuration["GoogleIdentityProvider:ClientId"],
-                ClientSecret = Configuration["GoogleIdentityProvider:ClientSecret"]
-            });
-
-            app.UseFacebookAuthentication(new FacebookOptions()
-            {
-                AppId = Configuration["FacebookIdentityProvider:AppId"],
-                AppSecret = Configuration["FacebookIdentityProvider:AppSecret"]
-            });
-
-            app.UseTwitterAuthentication(new TwitterOptions()
-            {
-                ConsumerKey = Configuration["TwitterIdentityProvider:ConsumerKey"],
-                ConsumerSecret = Configuration["TwitterIdentityProvider:ConsumerSecret"]
-            });
-
-            app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
-            {
-                ClientId = Configuration["MicrosoftIdentityProvider:ClientId"],
-                ClientSecret = Configuration["MicrosoftIdentityProvider:ClientSecret"]
-            });
-
-            app.UseLinkedInAuthentication(new LinkedInOptions()
-            {
-                ClientId = Configuration["LinkedinIdentityProvider:ClientId"],
-                ClientSecret = Configuration["LinkedinIdentityProvider:ClientSecret"]
-            });
-
-            app.UseInstagramAuthentication(new InstagramAuthenticationOptions()
-            {
-                ClientId = Configuration["InstagramIdentityProvider:ClientId"],
-                ClientSecret = Configuration["InstagramIdentityProvider:ClientSecret"]
-            });
-
-                (new InstagramOptions()
-            {
-                ClientId = Configuration["LinkedinIdentityProvider:ClientId"],
-                ClientSecret = Configuration["LinkedinIdentityProvider:ClientSecret"]
-            });
-
             app.UseStaticFiles();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
