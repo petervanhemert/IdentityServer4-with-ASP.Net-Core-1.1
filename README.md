@@ -4,7 +4,8 @@
  - [Project Directory](#project-directory)
  - [Nuget Package Manager](#nuget-package-manager)
  - [Connectionstring to DB](#connectionstring-to-db)
- - [Startup](#startup)
+ - [Configure IdentityServer](#configure-identityserver)
+  - [Startup](#startup)
 - [Using EntityFramework Core for configuration data](#using-entityframework-core-for-configuration-data)
  - [Configuring the stores](#configuring-the-stores)
  - [ConfigurationStore](#configurationstore)
@@ -55,7 +56,9 @@
   }
 }
   ```
-###Startup
+###Configure IdentityServer  
+  
+####Startup
 
 Modify your Startup.cs file to look like this:
 ```
