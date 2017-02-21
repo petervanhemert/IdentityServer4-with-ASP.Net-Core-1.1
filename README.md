@@ -3,6 +3,7 @@
 - [Setup IdentityServer](#setup-identityserver)
  - [Project Directory](#project-directory)
  - [Nuget Package Manager](#nuget-package-manager)
+ - [Connectionstring to DB](#connectionstring)
 - [Using EntityFramework Core for configuration data](#using-entityframework-core-for-configuration-data)
 
 ##Setup IdentityServer
@@ -32,7 +33,8 @@
  IdentityServer4.EntityFramework
  ```
  
- ###appsettings.json
+###Connectionstring to DB
+ ####appsettings.json
  
  Change DefaultConnection in ConnectionStrings in the file appsettings.json
   ```
