@@ -13,7 +13,7 @@
 ###Project Directory
  
  - In Data/Migrations Add Folders
-  - Configuration
+  - [x] Configuration
   - Identity
   - PersistedGrants
  
