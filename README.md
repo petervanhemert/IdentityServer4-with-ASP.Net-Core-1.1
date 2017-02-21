@@ -2,6 +2,7 @@
 
 - [Setup IdentityServer](#setup-identityserver)
  - [Project Directory](#project-directory)
+ - [Nuget Package Manager](#nuget-package-manager)
 - [Using EntityFramework Core for configuration data](#using-entityframework-core-for-configuration-data)
 
 ##Setup IdentityServer
@@ -20,7 +21,7 @@
  00000000000000_CreateIdentitySchema.cs
  ```
  
- ###Nuget Package Manager
+###Nuget Package Manager
  
  Update Packages
  
