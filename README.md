@@ -61,10 +61,10 @@
   
 ####Startup
 
-Modify your Startup.cs file to look like this:
-```
-public class Startup
-{
+As before, IdentityServer needs to be configured in both ConfigureServices and in Configure in Startup.cs.
+
+Modify your ConfigureServices in the Startup.cs to look like this:
+```ruby
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
@@ -94,10 +94,14 @@ public class Startup
                 .AddAspNetIdentity<ApplicationUser>()
                 .AddProfileService<IdentityWithAdditionalClaimsProfileService>();
         }
+```
 
+####Configure
 
+This shows both the template code generated for ASP.NET Identity, plus the additions needed for IdentityServer (just after UseIdentity). It’s important when using ASP.NET Identity that IdentityServer be registered after ASP.NET Identity in the pipeline because IdentityServer is relying upon the authentication cookie that ASP.NET Identity creates and manages.
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+```ruby
+public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
@@ -181,7 +185,6 @@ public class Startup
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
-}
 ```
 
   
