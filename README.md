@@ -139,7 +139,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
                 SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme,
                 ClientId = Configuration["GoogleIdentityProvider:ClientId"],
                 ClientSecret = Configuration["GoogleIdentityProvider:ClientSecret"]
-        });
+            });
 
             app.UseFacebookAuthentication(new FacebookOptions()
             {
