@@ -192,6 +192,27 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
   
 ## Using EntityFramework Core for configuration data
 
+#####Adding migrations
+
+```ruby
+PM> Add-Migration -Context ApplicationDbContext -OutputDir <ProjectName>\Data\Migrations\<DestinationFolder> SetMigrationName
+
+PM> Update-Database -Context ApplicationDbContext
+```
+
+#####Add-Migration
+-Context ApplicationDbContext
+Is the DbContext we are targeting
+
+-OutputDir <ProjectName>\Data\Migrations\<DestinationFolder>
+Is the file destination
+
+SetMigrationName
+Is the name we give of the Migration
+
+#####Update-Database
+-Context ApplicationDbContext
+
 ### Configuring the stores
  
  
@@ -201,11 +222,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 ### OperationalStore
 
 
-```
-PM> Add-Migration -Context ApplicationDbContext -OutputDir <ProjectName>\Data\Migrations\<DestinationFolder> SetMigrationName
 
-PM> Update-Database -Context ApplicationDbContext
-```
 
 
 
