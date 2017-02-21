@@ -4,7 +4,7 @@
  - [Project Directory](#project-directory)
  - [Nuget Package Manager](#nuget-package-manager)
  - [Connectionstring to DB](#connectionstring-to-db)
- - [Configure IdentityServer](#configure-identityserver)
+ - [Configure IdentityServer and the stores](#configure-identityserver-and-the-stores)
    - [Startup](#startup)
   
 - [Using EntityFramework Core for configuration data](#using-entityframework-core-for-configuration-data)
@@ -57,7 +57,7 @@
   }
 }
   ```
-###Configure IdentityServer  
+###Configure IdentityServer and the stores  
   
 ####Startup
 
