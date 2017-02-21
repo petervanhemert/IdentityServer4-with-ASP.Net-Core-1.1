@@ -183,13 +183,13 @@ public class Startup
   
 ## Using EntityFramework Core for configuration data
 
- ### Configuring the stores
+### Configuring the stores
  
  
- ### ConfigurationStore
+### ConfigurationStore
  
  
- ### OperationalStore
+### OperationalStore
 
 
 ```
