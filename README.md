@@ -23,7 +23,7 @@
   - [x] PersistedGrants
  
  Move the files of ApplicationDbContext Migration to Identity.
- ```
+ ```ruby
  ApplicationDbContextModelSnapshot.cs
  00000000000000_CreateIdentitySchema.cs
  ```
@@ -33,7 +33,7 @@
  Update Packages
  
  Add to project:
- ```
+ ```ruby
  IdentityServer4
  IdentityServer4.AspNetIdentity
  IdentityServer4.EntityFramework
@@ -44,7 +44,7 @@
  Open appsettings.json
  
  Change DefaultConnection in ConnectionStrings in the file appsettings.json
-  ```
+  ```ruby
  {
   "ConnectionStrings": {
     "DefaultConnection": "Server=<Server name>;Database=<Database name>;Trusted_Connection=True;MultipleActiveResultSets=true"
