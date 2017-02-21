@@ -201,17 +201,20 @@ PM> Update-Database -Context ApplicationDbContext
 ```
 
 #####Add-Migration
--Context ApplicationDbContext
+
+`-Context ApplicationDbContext`
 Is the DbContext we are targeting
 
--OutputDir <ProjectName>\Data\Migrations\<DestinationFolder>
+`-OutputDir <ProjectName>\Data\Migrations\<DestinationFolder>`
 Is the file destination
 
-SetMigrationName
+`SetMigrationName`
 Is the name we give of the Migration
 
 #####Update-Database
--Context ApplicationDbContext
+
+`-Context ApplicationDbContext`
+Is the DbContext we are targeting
 
 ### Configuring the stores
  
