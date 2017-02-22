@@ -176,16 +176,56 @@ PM> Update-Database -c ConfigurationDbContext
 
 ## Creating an MVC client
 
+Add an MVC application to your solution. Use the ASP.NET Core “Web Application” template for that. No authentication.
 
 
+### Client Nuget Package Manager 
+ 
+ Update Packages
+ 
+ Add to project:
+ ```ruby
+Microsoft.AspNetCore.Authentication.Cookies
+Microsoft.AspNetCore.Authentication.OpenIdConnect
+ ```
+Next add both middlewares to your pipeline - the cookies one is simple:
+```ruby
+app.UseCookieAuthentication(new CookieAuthenticationOptions
+{
+    AuthenticationScheme = "Cookies"
+});
+```
+The OpenID Connect middleware needs slightly more configuration. You point it to your IdentityServer, specify a client ID and tell it which middleware will do the local signin (namely the cookies middleware). As well, we’ve turned off the JWT claim type mapping to allow well-known claims (e.g. ‘sub’ and ‘idp’) to flow through unmolested. This “clearing” of the claim type mappings must be done before the call to UseOpenIdConnectAuthentication():
+```ruby
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+app.UseOpenIdConnectAuthentication(new OpenIdConnectOptions
+{
+    AuthenticationScheme = "oidc",
+    SignInScheme = "Cookies",
+
+    Authority = "http://localhost:5000",
+    RequireHttpsMetadata = false,
+
+    ClientId = "mvc",
+    SaveTokens = true
+});
+```
+
+Both middlewares should be added before the MVC in the pipeline.
+
+The last step is to trigger the authentication handshake. For that go to the home controller and add the `[Authorize]` on one of the actions. Also modify the view of that action to display the claims of the user, e.g.:
 
 
-
-
-
-
-
-
+```ruby
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
+```
 
 
 
