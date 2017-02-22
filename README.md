@@ -157,7 +157,7 @@ PM> Update-Database -c PersistedGrantDbContext
 PM> Update-Database -c ConfigurationDbContext
 ```
 
-     #####Add-Migration What is what?
+     Add-Migration What is what?
 
      `-c ApplicationDbContext`
      Is the DbContext we are targeting
@@ -168,7 +168,7 @@ PM> Update-Database -c ConfigurationDbContext
      `SetMigrationName`
      Is the name we give of the Migration
 
-     #####Update-Database What is what?
+     Update-Database What is what?
 
      `-c ApplicationDbContext`
      Is the DbContext we are targeting
