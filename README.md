@@ -157,21 +157,21 @@ PM> Update-Database -c PersistedGrantDbContext
 PM> Update-Database -c ConfigurationDbContext
 ```
 
-#####Add-Migration
+     #####Add-Migration What is what?
 
-`-c ApplicationDbContext`
-Is the DbContext we are targeting
+     `-c ApplicationDbContext`
+     Is the DbContext we are targeting
 
-`-o <ProjectName>\Data\Migrations\<DestinationFolder>`
-Is the file destination
+     `-o <ProjectName>\Data\Migrations\<DestinationFolder>`
+     Is the file destination
 
-`SetMigrationName`
-Is the name we give of the Migration
+     `SetMigrationName`
+     Is the name we give of the Migration
 
-#####Update-Database
+     #####Update-Database What is what?
 
-`-c ApplicationDbContext`
-Is the DbContext we are targeting
+     `-c ApplicationDbContext`
+     Is the DbContext we are targeting
 
 
 ## Creating an MVC client
