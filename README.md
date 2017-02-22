@@ -7,7 +7,7 @@
  - [Configure IdentityServer and the stores](#configure-identityserver-and-the-stores)
    - [Startup](#startup)
   
-- [Using EntityFramework Core for configuration data](#using-entityframework-core-for-configuration-data)
+- [Creating an MVC client](#creating-an-mvc-client)
  - [Configuring the stores](#configuring-the-stores)
  - [ConfigurationStore](#configurationstore)
  - [OperationalStore](#operationalstore)
@@ -139,7 +139,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 ```
 
   
-## Using EntityFramework Core for configuration data
+
 
 #####Adding migrations
 
@@ -173,13 +173,10 @@ Is the name we give of the Migration
 `-c ApplicationDbContext`
 Is the DbContext we are targeting
 
-### Configuring the stores
- 
- 
-### ConfigurationStore
- 
- 
-### OperationalStore
+
+## Creating an MVC client
+
+
 
 
 
